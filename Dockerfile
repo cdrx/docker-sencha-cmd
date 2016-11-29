@@ -16,4 +16,5 @@ RUN curl -o /cmd.run.zip http://cdn.sencha.com/cmd/6.2.0.103/SenchaCmd-6.2.0.103
 RUN mkdir /src
 WORKDIR /src
 ENV PATH="/opt/Sencha/Cmd:$PATH"
-ENTRYPOINT sencha
+CMD sencha app build production
+
