@@ -13,6 +13,9 @@ RUN mkdir /src && \
     mkdir -p /src && \
     chown -R sencha:sencha /home/sencha /src
 
+USER sencha
+ENV HOME /home/sencha
+
 RUN curl -o /home/sencha/cmd.sh.zip http://cdn.sencha.com/cmd/6.2.0.103/SenchaCmd-6.2.0.103-linux-amd64.sh.zip && \
     unzip -p /home/sencha/cmd.sh.zip > /home/sencha/cmd-install.sh && \
     chmod +x /home/sencha/cmd-install.sh && \
@@ -24,9 +27,6 @@ WORKDIR /src
 
 EXPOSE 1841
 
-USER sencha
-
-ENV HOME /home/sencha
 ENV PATH /home/sencha/bin/Sencha/Cmd/6.2.0.103/:$PATH
 
 CMD sencha app build production
