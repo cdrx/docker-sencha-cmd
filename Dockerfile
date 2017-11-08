@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN set -x \
     && apt-get update -qy \
-    && apt-get install --no-install-recommends -qfy unzip curl default-jre \
+    && apt-get install --no-install-recommends -qfy unzip curl default-jre build-essential \
     && apt-get clean
 
 RUN curl -o /cmd.run.zip http://cdn.sencha.com/cmd/6.5.0.180/SenchaCmd-6.5.0.180-linux-amd64.sh.zip && \
