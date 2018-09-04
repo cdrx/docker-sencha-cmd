@@ -7,10 +7,10 @@ RUN set -x \
     && apt-get install --no-install-recommends -qfy unzip curl default-jre build-essential \
     && apt-get clean
 
-RUN curl -o /cmd.run.zip http://cdn.sencha.com/cmd/6.5.0.180/SenchaCmd-6.5.0.180-linux-amd64.sh.zip && \
+RUN curl -o /cmd.run.zip http://cdn.sencha.com/cmd/6.5.0.180/SenchaCmd-6.6.0.13-linux-amd64.sh.zip && \
     unzip -p /cmd.run.zip > /cmd-install.run && \
     chmod +x /cmd-install.run && \
-    /cmd-install.run -q -dir /opt/Sencha/Cmd/6.5.0.180 && \
+    /cmd-install.run -q -dir /opt/Sencha/Cmd/6.6.0.13 && \
     rm /cmd-install.run /cmd.run.zip
 
 RUN mkdir /src
