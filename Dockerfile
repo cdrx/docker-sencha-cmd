@@ -11,7 +11,8 @@ RUN curl -o /cmd.run.zip http://cdn.sencha.com/cmd/6.7.0.63/no-jre/SenchaCmd-6.7
     unzip -p /cmd.run.zip > /cmd-install.run && \
     chmod +x /cmd-install.run && \
     /cmd-install.run -q -dir /opt/Sencha/Cmd/6.7.0.63 && \
-    rm /cmd-install.run /cmd.run.zip
+    rm /cmd-install.run /cmd.run.zip && \
+    sed -i "s/^\-Xmx.*/\-Xmx2096m/" /opt/Sencha/Cmd/6.7.0.63/sencha.vmoptions
 
 RUN mkdir /src
 WORKDIR /src
